@@ -52,9 +52,8 @@ pip install -r requirements.txt
 ## Project Structure
 
 ```
-Code_2/
+Code/
 ├── train_xuance_ippo_enhanced.py
-├── run_enhanced_training.py
 ├── requirements.txt
 ├── environment/
 │   ├── __init__.py
@@ -109,5 +108,6 @@ The environment simulates a Stackelberg security game in Mobile Edge Computing:
 ## License
 
 This code is provided for academic research purposes only.
+
 
 

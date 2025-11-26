@@ -15,7 +15,7 @@ If you use this code in your research, please cite our paper:
   title={{Learning to Defend: A Multi-Agent Reinforcement Learning Framework for Stackelberg Security Game in Mobile Edge Computing}},
   author={Ding, Zihao and Huang, Jun and Qi, Junjian},
   booktitle={International Conference on Computing, Networking and Communications (ICNC)},
-  year={2025},
+  year={2026},
   month={February},
   address={Honolulu, Hawaii, USA},
   organization={IEEE}
@@ -54,8 +54,6 @@ pip install -r requirements.txt
 ```
 Code_2/
 ├── train_xuance_ippo_enhanced.py
-├── train_xuance_isac_enhanced.py
-├── train_xuance_mappo_enhanced.py
 ├── run_enhanced_training.py
 ├── requirements.txt
 ├── environment/
@@ -66,8 +64,6 @@ Code_2/
 ├── config/
 │   ├── env_config.yaml
 │   ├── ippo_stackelberg_config.yaml
-│   ├── isac_stackelberg_config.yaml
-│   ├── mappo_stackelberg_config.yaml
 │   └── test_config.yaml
 └── utils/
     ├── __init__.py
@@ -85,8 +81,7 @@ python train_xuance_ippo_enhanced.py --critical_nodes 10
 
 ## Parameters
 
-- `--critical_nodes`: Number of critical nodes (default: 10, choices: [5, 10, 15, 20])
-- `--mode`: Running mode (choices: ['train', 'test', 'visualize'], default: 'train')
+- `--critical_nodes`: Number of critical nodes (default: 10, choices: [5, 10, 15])
 
 ## Outputs
 
@@ -114,4 +109,5 @@ The environment simulates a Stackelberg security game in Mobile Edge Computing:
 ## License
 
 This code is provided for academic research purposes only.
+
 

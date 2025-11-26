@@ -1,0 +1,93 @@
+dl_toolbox: "torch"
+project_name: "XuanCe_Stackelberg_Defense"
+logger: "tensorboard"
+wandb_user_name: "your_user_name"
+render: True
+render_mode: 'rgb_array'
+fps: 15
+test_mode: False
+device: "cpu"
+distributed_training: False
+master_port: '12355'
+
+agent: "IPPO"
+env_name: "StackelbergDefense"
+env_id: "stackelberg_defense_v0"
+env_seed: 1
+continuous_action: True
+learner: "IPPO_Learner"
+policy: "Gaussian_MAAC_Policy"
+representation: "Basic_MLP"
+vectorize: "DummyVecMultiAgentEnv"
+
+use_rnn: False
+rnn: "GRU"
+fc_hidden_sizes: [64, 64, 64]
+recurrent_hidden_size: 64
+
+representation_hidden_size: [256, 128]
+actor_hidden_size: [256, 128]
+critic_hidden_size: [256, 128]
+activation: "leaky_relu"
+activation_action: "tanh"
+use_parameter_sharing: False
+use_actions_mask: False
+
+seed: 42
+parallels: 1
+running_steps: 500000
+horizon_size: 1000
+buffer_size: 8192
+batch_size: 512
+n_epochs: 8
+n_minibatch: 8
+train_frequency: 1
+
+learning_rate: 0.0001
+weight_decay: 0.01
+use_linear_lr_decay: True
+lr_decay: True
+end_factor_lr_decay: 0.1
+
+gamma: 0.995
+gae_lambda: 0.98
+use_gae: True
+use_advnorm: True
+vf_coef: 1.0
+ent_coef: 0.005
+target_kl: 0.005
+clip_range: 0.1
+
+use_huber_loss: False
+huber_delta: 1.0
+use_value_norm: False
+value_norm_batch_size: 1
+
+clip_grad: True
+max_grad_norm: 0.5
+use_grad_clip: True
+grad_clip_norm: 0.5
+clip_type: 1
+
+use_value_clip: True
+value_clip_range: 0.2
+
+use_obsnorm: True
+use_rewnorm: True
+obsnorm_range: 3
+rewnorm_range: 3
+
+use_global_state: False
+dim_global_state: None
+
+start_training: 1000
+
+start_greedy: 1.0
+end_greedy: 0.05
+decay_step_greedy: 200000
+
+test_steps: 10000
+eval_interval: 5000
+test_episode: 5
+log_dir: "./logs/ippo_stackelberg/"
+model_dir: "./models/ippo_stackelberg/" 
